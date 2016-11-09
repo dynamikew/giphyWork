@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>giphy api</title>
+</head>
+<body>
+	
+	<div id="topics">
+		<button class="baseball" data-topic="baseball">theres no crying in baseball</button>
+		
+		<button class="writers" data-topic="writers">the word</button>
+		
+		<button class="carpentry" data-topic="carpentry">wood</button>
+		
+		<button class="music" data-topic="music">music</button>
+		
+		<button class="computers" data-topic="computers">johnny 5 still alive</button>
+	</div>	
+	
+
+	<div id="gifsAppearHere"></div>
+
+	<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script type="text/javascript">
+
+	$('.baseball').on('click', function() {
+
+	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + p + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+	$.ajax({url: queryURL, method: 'GET'})
+
+
+	var topics = ["baseball", "writers", "carpentry","music", "computers"]
+
+	for (var i = 0; i < topics.length; i++) {
+		console.log(topics);
+	}
+
+	for (var i = 0; i < gifsArray.length; i++) {
+            gifsArray[i];
+            var button = $('<button>');
+            button.data(gifs);
+            button.text(gifsArray[i]);
+            $('#gifView').append(button);
+        };
+
+</script>
+</body>
+</html>
